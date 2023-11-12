@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml" fx:controller="ru.javachat2.Controller">
+    <HBox fx:id="authPanel">
+        <TextField promptText="Введите имя пользователя" fx:id="usernameField" HBox.hgrow="ALWAYS"
+                   onAction="#tryToAuth"/>
+        <Button onAction="#tryToAuth">Подключиться</Button>
+    </HBox>
+    <HBox VBox.vgrow="ALWAYS">
+        <TextArea fx:id="chatArea" editable="false" HBox.hgrow="ALWAYS"/>
+        <ListView onMouseClicked="#clientsListDoubleClick" fx:id="clientsListView" visible="false" managed="false" minWidth="180" maxWidth="180"/>
+    </HBox>
+
+    <HBox fx:id="msgPanel" visible="false" managed="false">
+        <TextField promptText="Введите сообщение" fx:id="messageField" HBox.hgrow="ALWAYS" onAction="#sendMessage"/>
+        <Button onAction="#sendMessage">Отправить</Button>
+    </HBox>
+</VBox>
