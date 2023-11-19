@@ -61,7 +61,7 @@ public class Controller {
 
     public void sendCloseRequest() {   // запрос на сервер на отключение соединения
         try {
-            if (out != null) {
+            if (out != null && !socket.isClosed()) {
                 out.writeUTF("/exit");  // отправка сообщения серверу на отключение
             }
         } catch (IOException e) {

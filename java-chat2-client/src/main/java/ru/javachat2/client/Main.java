@@ -12,9 +12,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root = FXMLLoader.load(getClass().getResource("/chat2.fxml"));
-        Controller controller = fxmlLoader.getController();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(
+                "/chat2.fxml"));
+        Parent root = (Parent) loader.load();
+        Controller controller = loader.getController();
+
+//        FXMLLoader fxmlLoader = new FXMLLoader();
+//
+//        Parent root = FXMLLoader.load(getClass().getResource("/chat2.fxml"));
+//        Controller controller = fxmlLoader.getController();
 
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setTitle("Chat");
